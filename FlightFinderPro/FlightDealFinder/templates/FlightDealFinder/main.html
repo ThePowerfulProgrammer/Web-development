@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <table style="border-collapse: collapse; width: 80%; margin: 0 auto; margin-bottom: 10px; margin-top: 10px;">
+        
+        <thead>
+            <tr class="header" style="border: solid black 1px;">
+                <th class="col-header" style="border: solid black 1px;">Departure</th>
+                <th class="col-header" style="border: solid black 1px;"> Departure Time</th>
+                <th class="col-header" style="border: solid black 1px;">Arrival</th>
+                <th class="col-header" style="border: solid black 1px;">Arrival Time</th>
+                <th class="col-header" style="border: solid black 1px;">Currency</th>
+                <th class="col-header" style="border: solid black 1px;">Price</th>
+                <th class="col-header" style="border: solid black 1px;">Seats</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for departure, departure_time, arrival, arrival_time, currency, price, seat in flights %}
+                <tr class="row" style="border: solid black 1px;">
+                    <td style="border: solid black 1px;">{{ departure }}</td>
+                    <td style="border: solid black 1px;">{{ departure_time }}</td>
+                    <td style="border: solid black 1px;">{{ arrival }}</td>
+                    <td style="border: solid black 1px;">{{ arrival_time }}</td>
+                    <td style="border: solid black 1px;">{{ currency }}</td>
+                    <td style="border: solid black 1px;">{{ price }}</td>
+                    <td style="border: solid black 1px;">{{ seat  }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+
+    </table>
+    
+</body>
+</html>

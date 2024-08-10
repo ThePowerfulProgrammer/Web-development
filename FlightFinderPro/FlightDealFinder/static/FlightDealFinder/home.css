@@ -1,0 +1,41 @@
+
+.container 
+{
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px #9fd3c7 solid;
+    background-color: #142d4c;
+    color: #ececec;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+
+.btn-container {
+    width: 50%;
+    margin-left: 47%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    font-size: 18px;
+}
+
+
+button {
+    border: 4px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    width: 120px;
+    background-color: ececec;
+}
+
+button:hover {
+    background-color: rgb(27, 230, 237);
+}
