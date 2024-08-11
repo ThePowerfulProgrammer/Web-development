@@ -1,41 +1,35 @@
+/*
+Colors:: 
+    #f70776
+    #c3195d
+    #680747
+    #141010
 
-.container 
-{
+*/
+
+body {
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 1px #9fd3c7 solid;
-    background-color: #142d4c;
-    color: #ececec;
-    padding: 2px;
-    padding-bottom: 5px;
-}
-
-.btn-container {
-    width: 50%;
-    margin-left: 47%;
-}
-
-h1 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
-
-a {
-    font-size: 18px;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    background-image: url("./images/img.jpg");
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 
-button {
-    border: 4px solid black;
-    padding: 5px;
-    border-radius: 10px;
-    width: 120px;
-    background-color: ececec;
+
+.container-fluid {
+    border-radius: 10px; 
 }
 
-button:hover {
-    background-color: rgb(27, 230, 237);
+.btn {
+    border-color: #ff0000;
+}
+
+.btn-primary {
+    background-color: #ff0000;
+}
+
+.btn-primary:hover {
+    background-color: #f70776;
 }
