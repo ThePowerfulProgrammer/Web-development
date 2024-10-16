@@ -1,0 +1,29 @@
+.grid 
+{
+    border: 2px solid black;
+}
+
+.square 
+{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+.grid 
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 618px;
+    height: 618px;
+
+}
+
+.mole 
+{
+    background-image: url("WAG.png");
+    background-size: cover;
+}
