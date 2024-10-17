@@ -1,39 +1,53 @@
-.container 
+.banner 
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.grid 
 {
     border: 2px solid black;
-    height: 800px;
-    width: 100%;
-    margin: 0 auto;
 }
 
-.child 
+.tile 
 {
-    width: 100px;
-    height: 100px;
-    border: 5px solid red;
-    border-radius: 10%;
-    background-color: salmon;
     text-align: center;
-    
-    
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 5%;
+}
+
+.tile:hover 
+{
+    box-shadow: 5px 5px  cyan;
 }
 
 
+/* Adopt the flex layout */
 
-/* Use display flex to get a x-y axis */
-.container 
+.grandparent 
 {
     display: flex;
-    flex-direction: row; /*ensure we are working from the top left corner default:row*/
-    justify-content: flex-start; /*Moving the objects along the imaginary horizontal line default: flex-start*/
-    /* align-items: flex-start; Now we move objects using the y axis default: flex-start */
-    flex-wrap: wrap; /*ensures that when children consume all space in a line, they will wrap to the next line default: nowrap*/
-    align-content: flex-start; /*avaible when flex-wrap is set*/
-    gap: 1px; /*space between children*/
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.child 
+.grid 
 {
-    flex-grow: 1; /*Any child with this will grow in a ratio to all other children*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1018px;
+    height: 1018px;
 }
+
+.drone 
+{
+    background-image: url("images/N.png");
+    background-size: cover;
+}
+
