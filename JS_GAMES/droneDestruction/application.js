@@ -255,21 +255,137 @@ document.addEventListener("DOMContentLoaded", () =>
 
             if (droneDirection === "N" && existingDroneX - 2 >= 0) 
                 {
-                    var tileOne = document.querySelector(`[x="${existingDroneX-2}"][y="${existingDroneY}"]`)
+                    // shoot up
+                    var tileOne = document.querySelector(`[x="${existingDroneX-1}"][y="${existingDroneY}"]`)
                     console.log(tileOne)
-                    tileOne.style.backgroundColor = "black"
-                }
-            if (droneDirection === "E") 
-                {
+                    tileOne.textContent = null
+                    tileOne.classList.add("projectile-container")
+                    var explosive = document.createElement("div")
+                    explosive.setAttribute("class", "projectile")
+                    tileOne.appendChild(explosive)
+
+
+                    setTimeout(() => {
+                        var tileTwo = document.querySelector(`[x="${existingDroneX-2}"][y="${existingDroneY}"]`)
+                        console.log(tileTwo)
+                        tileTwo.textContent = null
+                        tileTwo.classList.add('projectile-container')
+
+                        var explosiveTwo = document.createElement("div")
+                        explosiveTwo.setAttribute("class", "projectileExplosive")
+                        tileTwo.appendChild(explosiveTwo)
+
+                        setTimeout(()=> 
+                            {
+                                tileOne.removeChild(explosive)
+                                explosiveTwo.classList.add("explosion")
+                                setTimeout(()=> 
+                                    {
+                                        tileTwo.removeChild(explosiveTwo)
+
+                                        explosiveTwo.classList.remove("explosion")
+
+                                        tileOne.classList.remove("projectile-container")
+                                        tileTwo.classList.remove("projectile-container")
+                                        
+
+                                        tileTwo.classList.add("destroyed-tile")
+                                    }, 13000)
+
+ 
+                            }, 1200)
+
+ 
+                    }, 1200)
+
+                    
 
                 }
-            if (droneDirection === "S") 
+            if (droneDirection === "E" && existingDroneY + 2 <= 9)  
                 {
+                    // Shoot right (East)
+                    var tileOne = document.querySelector(`[x="${existingDroneX}"][y="${existingDroneY+1}"]`);
+                    console.log(tileOne);
+                    tileOne.textContent = null;
+                    tileOne.classList.add("projectile-container-east");
+                    var explosive = document.createElement("div");
+                    explosive.setAttribute("class", "projectileEast"); // Update class name for East
+                    tileOne.appendChild(explosive);
+
+                    setTimeout(() => {
+                        var tileTwo = document.querySelector(`[x="${existingDroneX}"][y="${existingDroneY+2}"]`);
+                        console.log(tileTwo);
+                        tileTwo.textContent = null;
+                        tileTwo.classList.add('projectile-container-east');
+
+                        var explosiveTwo = document.createElement("div");
+                        explosiveTwo.setAttribute("class", "projectileExplosiveEast"); // Update class name for East
+                        tileTwo.appendChild(explosiveTwo);
+
+                        setTimeout(() => {
+                            tileOne.removeChild(explosive);
+                            tileTwo.removeChild(explosiveTwo);
+                        }, 3000);
+                    }, 1200);
+                }
+            if (droneDirection === "S" && existingDroneX + 2 <= 9) 
+                {
+                    // shoot down
+                    var tileOne = document.querySelector(`[x="${existingDroneX+1}"][y="${existingDroneY}"]`)
+                    console.log(tileOne)
+                    tileOne.textContent = null
+                    tileOne.classList.add("projectile-container")
+                    var explosive = document.createElement("div")
+                    explosive.setAttribute("class", "projectileXDown")
+                    tileOne.appendChild(explosive)
+                    
+                    setTimeout(() => 
+                        {
+                            var tileTwo = document.querySelector(`[x="${existingDroneX+2}"][y="${existingDroneY}"]`)
+                            console.log(tileTwo)
+                            tileTwo.textContent = null
+                            tileTwo.classList.add('projectile-container')
+    
+                            var explosiveTwo = document.createElement("div")
+                            explosiveTwo.setAttribute("class", "projectileExplosiveXDown")
+                            tileTwo.appendChild(explosiveTwo)
+                            
+                            setTimeout(()=> 
+                                {
+                                    tileOne.removeChild(explosive)
+                                    tileTwo.removeChild(explosiveTwo)
+                                }, 3000)
+                            
+                        }, 1200)
 
                 }
-            if (droneDirection === "W") 
+            if (droneDirection === "W" && existingDroneY - 2 >= 0) 
                 {
+                    // Shoot left (West)
+                    var tileOne = document.querySelector(`[x="${existingDroneX}"][y="${existingDroneY-1}"]`);
+                    console.log(tileOne);
+                    tileOne.textContent = null;
+                    tileOne.classList.add("projectile-container-west");
+                    var explosive = document.createElement("div");
+                    explosive.setAttribute("class", "projectileWest"); 
+                    tileOne.appendChild(explosive);
 
+                    setTimeout(() =>
+                        {
+                            var tileTwo = document.querySelector(`[x="${existingDroneX}"][y="${existingDroneY-2}"]`);
+                            console.log(tileTwo);
+                            tileTwo.textContent = null;
+                            tileTwo.classList.add('projectile-container-west');
+
+                            var explosiveTwo = document.createElement("div");
+                            explosiveTwo.setAttribute("class", "projectileExplosiveWest"); 
+                            tileTwo.appendChild(explosiveTwo);
+
+                            setTimeout(() => {
+                                tileOne.removeChild(explosive);
+                                tileTwo.removeChild(explosiveTwo);
+                            }, 3000);
+                    }, 1200);
                 }
 
         }

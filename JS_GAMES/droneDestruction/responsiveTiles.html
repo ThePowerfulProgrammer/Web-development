@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Destruction</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    .grid 
+    {
+        border: 2px solid crimson;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .tile 
+    {
+        font-size: 15px;
+        text-align: center;
+        width: 9%;
+        height: 9%;
+        border: 1px solid black;
+    }
+
+
+    
+</style>
+</head>
+<body>
+
+    <h1 class="banner">Drone Destruction: Apocalyse now</h1>
+
+    <div class="grandparent">
+        <div class="grid">
+            <!-- Populate with tiles -->
+
+        </div>
+    </div>
+
+
+    <script>
+        var grid = document.querySelector(".grid")
+        var tiles = []
+
+        // create 100 tiles: 10 per row x 10 per column
+        for (let x=0;x<10; x++) 
+            {
+                for (let y=0;y<10;y++) 
+                    {
+                        var tile = document.createElement("div")
+                        tile.setAttribute("class", "tile")
+                        tile.setAttribute("x", x)
+                        tile.setAttribute("y", y)
+                        tile.innerText = `(${x},${y})`
+
+                        grid.appendChild(tile)
+                        tiles.push(tile)
+
+
+                    }
+            }
+    </script>
+    
+</body>
+</html>
