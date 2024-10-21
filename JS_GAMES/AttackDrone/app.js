@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () =>
                 {
                     var tile = document.createElement("div")
                     tile.setAttribute("class", "tile")
-                    tile.setAttribute("x", y)
+                    tile.setAttribute("x", y) // yes, it is correct
                     tile.setAttribute("y", x)
                     tile.innerText = `(${y},${x})`
 
@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () =>
                         // alert(tiles[i].getAttribute("x") + " " + tiles[i].getAttribute("y") )
 
                         var targetTile= event.target.parentNode
+                        console.log(event.target) 
                         
 
                         var targetTileX = parseInt(targetTile.getAttribute("x"),10)
@@ -63,17 +64,17 @@ document.addEventListener("DOMContentLoaded", () =>
                                 console.log(targetTileX + " == " + droneExistsX + "," + targetTileY + " == " + droneExistsY)
                                 if (targetTileX == droneExistsX && targetTileY == droneExistsY) 
                                     {
-                                        var action = prompt("Would you like to view your Position or would you like to Destroy your enemies?\nEnter P (Position) or D (Destroy) ")
-                                        var actions = ["P", "D"]
+                                        var action = prompt("Would you like to view your Position or would you like to Destroy your enemies?\nEnter R (Position) or A (Attack) ")
+                                        var actions = ["A", "R"]
                                         if (actions.includes(action,0)) 
                                             {
-                                                if (action == "D") 
+                                                if (action == "A") 
                                                     {
                                                         droneStrike() // I clicked on a tile which has a drone therefore I strike
                                                     }
-                                                else 
+                                                else if (action == "R") 
                                                     {
-
+                                                        reportPosition() // I clicked on a tile which has a drone and I want to report a few details
                                                     }
                                             }
                                         else 
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () =>
                                 {
                                     const direction = prompt("Enter direction (North,South,East,West): ")
                                     console.log(direction)
-                                    var cardinals = ['North', 'South', 'East', 'West', 'north', 'south', 'east', 'west']
+                                    var cardinals = ['North', 'South', 'East', 'West']
         
                                     if (cardinals.includes(direction, 0)   ) 
                                         {
@@ -452,6 +453,17 @@ function droneStrike()
                     firstTile.classList.remove("projectile-containerEast")
                 }, 1500)
         }
+}
+
+// report drone details 
+function reportPosition() 
+{
+    var drone = document.querySelector(".drone")
+    var x = drone.getAttribute("x")
+    var y = drone.getAttribute("y")
+    var direction = drone.getAttribute("direction")
+
+    alert(`Your drone's current location is: (${x},${y}) \nYour drone is facing ${direction}`)
 }
         
 })
