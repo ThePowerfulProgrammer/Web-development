@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Personal Details
 **Name:** Ashish Ramnath
 
@@ -52,7 +52,7 @@ A web-based game simulating a user controlling a drone on a grid.
    - If you are on mobile, do the same via touch input.
 
 ## Access the online game here: [CodePen link](<insert_your_codepen_link_here>)
-=======
+
 # Personal Details
 **Name:** Ashish Ramnath
 
@@ -94,7 +94,7 @@ A web-based game simulating a user controlling a drone on a grid.
 - **Accounting for player variance:** The game accommodates various input methods (mouse, touch, keyboard). Some players may not enjoy the variability in input methods.
 
 ## How to Install and Run the Project:
-1. Navigate to this URL and download the zip folder.
+1. Navigate to this [URL]:https://github.com/ThePowerfulProgrammer/WebGameDev/archive/refs/heads/main.zip  and download the zip folder.
 2. Unzip the folder in any location. The unzipped folder contains:
    - `index.html`
    - `style.css`
@@ -105,5 +105,4 @@ A web-based game simulating a user controlling a drone on a grid.
    - If you are on PC, use your mouse to click on any tile to begin.
    - If you are on mobile, do the same via touch input.
 
-## Access the online game here: [CodePen link](<insert_your_codepen_link_here>)
->>>>>>> origin/main
+## Access the online game here: [CodePen link]https://codepen.io/Powerful_Programmer/pen/NWQvOvp
