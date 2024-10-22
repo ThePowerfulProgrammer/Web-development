@@ -94,7 +94,7 @@ A web-based game simulating a user controlling a drone on a grid.
 - **Accounting for player variance:** The game accommodates various input methods (mouse, touch, keyboard). Some players may not enjoy the variability in input methods.
 
 ## How to Install and Run the Project:
-1. Navigate to this [URL]:https://github.com/ThePowerfulProgrammer/WebGameDev/archive/refs/heads/main.zip  and download the zip folder.
+1. Navigate to this [URL]:https://drive.google.com/drive/folders/1BT6HLN6toJrnYUE43MUPZRafJ-3-YMDm?usp=sharing  and download the zip folder.
 2. Unzip the folder in any location. The unzipped folder contains:
    - `index.html`
    - `style.css`
