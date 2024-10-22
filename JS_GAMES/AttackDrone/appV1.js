@@ -39,83 +39,99 @@ document.addEventListener("DOMContentLoaded", () =>
 
 
 
-    function assignPlaceEvent() 
-    {
-        for (let i=0;0<tiles.length;i++) 
+            function assignPlaceEvent() 
             {
-                tiles[i].addEventListener('click', (event) => 
+                for (let i=0;i<tiles.length;i++) 
                     {
-                        // alert(tiles[i].getAttribute("x") + " " + tiles[i].getAttribute("y") )
-
-                        var targetTile= event.target.parentNode
-                        console.log(event.target) 
-                        
-
-                        var targetTileX = parseInt(targetTile.getAttribute("x"),10)
-                        var targetTileY = parseInt(targetTile.getAttribute("y"),10)
-                        console.log(targetTileX, " ", targetTile)
-
-                        var droneExists = document.querySelector(".drone")
-                        if (droneExists) 
+                        tiles[i].addEventListener('click', (event) => 
                             {
-                                var droneExistsX = parseInt(droneExists.getAttribute("x"),10) 
-                                var droneExistsY = parseInt(droneExists.getAttribute("y"),10)
-                                
-                                console.log(targetTileX + " == " + droneExistsX + "," + targetTileY + " == " + droneExistsY)
-                                if (targetTileX == droneExistsX && targetTileY == droneExistsY) 
+    
+                                var targetTile= event.target.parentNode
+                                    
+                                var targetTileX = parseInt(targetTile.getAttribute("x"),10)
+                                var targetTileY = parseInt(targetTile.getAttribute("y"),10)                    
+                                var droneExists = document.querySelector(".drone")                            
+    
+                                if (droneExists) 
                                     {
-                                        var action = prompt("Would you like to view your Position or would you like to Destroy your enemies?\nEnter R (Position) or A (Attack) ")
-                                        var actions = ["A", "R"]
-                                        if (actions.includes(action,0)) 
+                                        var droneExistsX = parseInt(droneExists.getAttribute("x"),10) 
+                                        var droneExistsY = parseInt(droneExists.getAttribute("y"),10)
+                                        
+                                        
+                                        if (targetTileX == droneExistsX && targetTileY == droneExistsY) 
                                             {
-                                                if (action == "A") 
+                                                var action = prompt("Would you like to report your Position?\nWould you like to move your current Drone?\nWould you like to Destroy your enemies?\nEnter R (R = Report), P (P = Position) or A (A = Attack) ")
+                                                var strippedAction = action.trim()
+                                                var actions = ["A", "R", "P"]
+                                                if (actions.includes(strippedAction,0)) 
                                                     {
-                                                        droneStrike() // I clicked on a tile which has a drone therefore I strike
+                                                        if (strippedAction == "A") 
+                                                            {
+                                                                droneStrike() // I clicked on a tile which has a drone therefore I strike
+                                                            }
+                                                        else if (strippedAction == "R") 
+                                                            {
+                                                                reportPosition() // I clicked on a tile which has a drone and I want to report a few details
+                                                            }
+                                                        else if (strippedAction == "P") // More of a feature as I need to account for movement of mobile users: They have no keyboard LOL :^) 
+                                                            {
+                                                                const direction = prompt("Enter direction (North,South,East,West): ")
+                                                                
+                                                                const strippedDirection = direction.trim()
+                                                                var cardinals = ['North', 'South', 'East', 'West']
+                                                                
+                                                                if (cardinals.includes(strippedDirection, 0)   ) 
+                                                                    {
+                                                                        placeDrone(tiles[i], strippedDirection)
+                                                                    }
+                                                                else 
+                                                                {
+                                                                    alert("invalid direction, please try again :) ")
+                                                                }
+                                                                 
+                                                            }
                                                     }
-                                                else if (action == "R") 
-                                                    {
-                                                        reportPosition() // I clicked on a tile which has a drone and I want to report a few details
-                                                    }
+                                                else 
+                                                {
+                                                    alert("Invalid Option, do that again and maybe a drone will visit you")
+                                                }
                                             }
-                                        else 
+                                        else // I am either adding the first drone or moving that drone
                                         {
-                                            alert("Invalid Option, do that again and maybe a drone will visit you")
+                                            const direction = prompt("Enter direction (North,South,East,West): ")
+                                            const strippedDirection = direction.trim()
+                                            
+                                            var cardinals = ['North', 'South', 'East', 'West']
+                
+                                            if (cardinals.includes(strippedDirection, 0)   ) 
+                                                {
+                                                    placeDrone(tiles[i], strippedDirection)
+                                                }
+                                            else 
+                                            {
+                                                alert("invalid direction, please try again :) ")
+                                            }
                                         }
                                     }
-                                else // I am either adding the first drone or moving that drone
+                                else 
                                 {
                                     const direction = prompt("Enter direction (North,South,East,West): ")
-                                    console.log(direction)
+                                    const strippedDirection = direction.trim()
+                                    
                                     var cardinals = ['North', 'South', 'East', 'West']
         
-                                    if (cardinals.includes(direction, 0)   ) 
+                                    if (cardinals.includes(strippedDirection, 0)   ) 
                                         {
-                                            placeDrone(tiles[i], direction)
+                                            placeDrone(tiles[i], strippedDirection)
                                         }
                                     else 
                                     {
                                         alert("invalid direction, please try again :) ")
                                     }
                                 }
-                            }
-                        else 
-                        {
-                            const direction = prompt("Enter direction (North,South,East,West): ")
-                            console.log(direction)
-                            var cardinals = ['North', 'South', 'East', 'West']
-
-                            if (cardinals.includes(direction, 0)   ) 
-                                {
-                                    placeDrone(tiles[i], direction)
-                                }
-                            else 
-                            {
-                                alert("invalid direction, please try again :) ")
-                            }
-                        }
-                    })           
-            }
-}
+                            })           
+                    }
+        }
 assignPlaceEvent() // call function to apply the event on each coordinate tile
 
 
@@ -466,4 +482,11 @@ function reportPosition()
     alert(`Your drone's current location is: (${x},${y}) \nYour drone is facing ${direction}`)
 }
         
+
+
+
+
+
+
+
 })
