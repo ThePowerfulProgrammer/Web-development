@@ -1,0 +1,125 @@
+/* fonts */
+
+.pt-serif-regular {
+font-family: "PT Serif", serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.pt-serif-bold {
+font-family: "PT Serif", serif;
+font-weight: 700;
+font-style: normal;
+font-size: medium;
+}
+
+.pt-serif-regular-italic {
+font-family: "PT Serif", serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.pt-serif-bold-italic {
+font-family: "PT Serif", serif;
+font-weight: 700;
+font-style: italic;
+}
+
+ /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 200 to 700 */
+
+ .oswald-fonts {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* colors */
+/* #fbb1a2 Rose bud 
+#f6a2b2 illusion
+#f29cbb wewak 
+#d68fa0 Can Can 
+#a65e7e Tapestry */
+
+* 
+{
+    padding: 0;
+}
+
+/* Set bg color */
+body 
+{
+    background-color: #f6a2b2;
+}
+
+/* Center the form */
+.container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+/* 
+Form card */
+.card 
+{
+    border: 2px solid black;
+    width: 40vw;    
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+}
+
+.card:hover 
+{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.section-1 
+{
+    background-color: #a65e7e;
+}
+
+.banner 
+{
+    text-align: center;
+    color: white;
+    margin-top: 0;
+
+}
+
+
+
+.login-form input 
+{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    width: 90%;
+    height: 25px;
+    text-align: center;
+}
+
+#submit 
+{
+    border: 2px solid #a65e7e;
+}
+
+#submit:hover 
+{
+    box-shadow: 17px 10px 55px 20px rgba(0,0,0,0.75);
+}
+
+
+@media screen and (max-width: 450px)
+{
+    .login-form input 
+    {
+        width: 95%;
+        font-size: 9px;
+    }
+
+}
+
