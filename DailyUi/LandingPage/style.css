@@ -1,0 +1,138 @@
+
+/* Fonts
+
+font-family: "Roboto Mono", serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+
+font-family: "Tauri", serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: "Noto Sans", sans-serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+font-variation-settings:
+    "wdth" 100;
+text-align: center; */
+
+/*
+
+*/
+
+
+
+body 
+{
+    /* background-image: url("lpimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0a5a66;
+
+    background-blend-mode: lighten; */
+    background-color: #e1efff;
+}
+
+
+
+
+.banner 
+{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 3rem;
+    color: #1f5692;
+    text-align: center;
+    
+} 
+
+.btn-container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button 
+{
+    font-family: "Tauri", serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    border: 0px;
+    background-color: #f66b1d;
+    margin-bottom: 50px;
+    color: #e1efff;
+    padding: 8px;
+}
+
+.img-container 
+{
+    margin-left: 12px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.img-container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (min-width: 700px) {
+    
+    .container 
+    {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 100px;
+    }
+
+    .banner 
+    {
+        text-align: left;
+        font-size: 5rem;
+        margin-bottom: 30px;
+        font-family: "Tauri", serif;
+    }
+
+    .btn-container 
+    {
+        display: block;
+    }
+    button 
+    {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 6px;
+        font-size: 2.5rem;
+    }
+    button:hover 
+    {
+        background-color:#680000;
+    }
+
+    .img-container 
+    {
+        display: block;
+    }
+
+    .lg-display 
+    {
+        display: flex;   
+
+        flex-direction: column;
+        width: 30%;
+    }
+
+
+}

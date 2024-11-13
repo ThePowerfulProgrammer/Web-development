@@ -1,0 +1,113 @@
+/*
+Choosing colors
+
+1) Choosing a dominate color
+What do colors mean?
+
+2) Add 2 more colors : Complementary + Accent
+mycolorspaces
+
+3) How to apply color: 
+60/30/10 Rule
+
+60%  --> Background
+30% --> Main Elements
+10% --> Accent, lil sparks
+
+Can always switch between colors 
+
+
+
+*/
+
+body 
+{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.calculator 
+{
+    margin-top: 140px;
+    border-radius: 4px;
+    background-color: #F4F4F4;
+}
+
+.calculator 
+{
+    border: 2px solid black;
+    width: 80%;
+
+}
+
+.banner 
+{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+
+.input-box 
+{
+    display: flex;
+    justify-content: center;
+}
+
+.input-box input 
+{
+    border: 2px solid black;
+    width: 99%;
+    height: 2rem;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttons 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;       
+}
+
+.numeric 
+{
+    background-color: #68c5ea;
+}
+
+.operational
+{
+    background-color: #FF7F50;
+}
+
+
+.equal 
+{
+    background-color: #f9632d;
+}
+
+.buttons button 
+{
+    width: 25%;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    height: 3rem;
+    
+}
+.buttons button:hover 
+{
+    background-color: rgb(5, 52, 239);
+    color: white;
+}
+
+@media only screen and (min-width: 600px)
+{
+    .calculator 
+    {
+        width: 45%;
+    }
+}
